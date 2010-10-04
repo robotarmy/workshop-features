@@ -4,19 +4,21 @@ Feature: Topics List and Details
   and see details about them
 
   Background: Make sure we have a topic in the list
-    Given I go to topics
-    And I follow "New topic"
+    Given I go to the topics page
+    And I follow "New Topic"
     When I fill in "Title" with "Rails Fixtures"
     And I fill in "Description" with "Introduce how to add test data with fixtures."
     And I press "Create"
 
-  Scenario: Clicking on the topic title
-    When I follow "Rails Fixtures"
+  Scenario: Viewing a topic detail page
+    When I go to the topics page
+    And I follow "Rails Fixtures"
     Then I should see "Introduce how to add test data with fixtures."
-    And I should not see "add a topic"
+    And I should not see "New Topic"
 
   Scenario: Deleting a topic
+    When I go to the topics page
     When I follow "Delete"
     Then I should not see "Rails Fixtures"
-    And I should see "New topic"
+    And I should see "New Topic"
 

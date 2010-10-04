@@ -4,8 +4,8 @@ Feature: Votes with authentication
   and since we know who they are, they can take back their vote!
   
   Background: Make sure that we have a topic
-    Given I go to topics
-    And I follow "New topic"
+    Given I go to the topics page
+    And I follow "New Topic"
     When I fill in "Title" with "Rails Fixtures"
     And I fill in "Description" with "Introduce how to add test data with fixtures."
     And I press "Create"
